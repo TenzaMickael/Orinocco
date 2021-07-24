@@ -1,114 +1,83 @@
-//APPELLE DE L'API DES OURSONS 
+
+/* Import de l'Id "listTeddies" */
+
+const listTeddies = document.getElementById ('listTeddies');
 
 
-// Import de l'Id "listTeddies"
+/* Requete XMLHttpRequest pour récupérer l'API des oursons */
 
-const listTeddies = document.getElementById('listTeddies');
-
-//Requete XMLHttpRequest pour récupérer l'API des oursons
-
-var request = new XMLHttpRequest();
-request.onreadystatechange = function(){
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
-        const response = JSON.parse(this.responseText);
-        for (let index = 0 ; index < response.length ; index++) {
-            teddies(response[index]);   
-        }  
-    }
-};
-request.open("GET" ,"http://localhost:3000/api/teddies");
-request.send();
+getAllTeddies ();
 
 
-//Création d'une fonction pour mettre en place les donnée récupérées de l'API 
+/* Création d'une fonction pour mettre en place les donnée récupérées de l'API */
 
-function teddies (data) {
-console.log(data)
+function teddiesApi (data) {
 
-//Création des balises sous forme de cards 
-
-    let masterContainer = document.createElement ("div"); 
-
-    let bodyContainer = document.createElement ("div");
-
-    let pictureIndexTeddies = document.createElement ("img");
-
-    let titleIndexPicture = document.createElement ("h3");
-
-    let nameIndexTeddies = document.createElement ("p");
-
-    let colorsIndexTeddies = document.createElement ("p");
-
-    let descriptionIndexTeddies = document.createElement ("p");
-
-    let priceIndexTeddies = document.createElement ("p");
-
-    let btnIndexContainer = document.createElement ("div");
-
-    let btnIndexProduct = document.createElement ("a");
+    /***** Container de la page *****/
+    let masterContainer = document.createElement ("div");                               //=> Création d'un container <div> 
+    masterContainer.setAttribute ("class", "card") ;                                    //=> On lui attribut une classe 
+    listTeddies.appendChild (masterContainer);                                          //=> On lui déclare son parent 
+        let bodyContainer = document.createElement ("div");                             //=> Création d'un container <div>
+        bodyContainer.setAttribute ("class", "card-body");                              //=> On lui attribut une classe 
+        masterContainer.appendChild (bodyContainer);                                    //=> On lui déclare son parent 
 
 
-//Ajout des attributs au balises pour la création du style
+    /***** Images des oursons *****/
+    let pictureIndexTeddies = document.createElement ("img");                           //=> Création d'une balise <img>
+    pictureIndexTeddies.setAttribute ("src",data.imageUrl);                             //=> Chemin de l'image
+    pictureIndexTeddies.setAttribute ("class","card-img-top");                          //=> On lui attribut une classe 
+    pictureIndexTeddies.setAttribute ("alt" , "image d'un ourson en peluche");          //=> On lui attribut une balise "alt"
+    bodyContainer.appendChild (pictureIndexTeddies);                                    //=> On lui déclare son parent
 
-    masterContainer.setAttribute("class", "card") ;
 
-    bodyContainer.setAttribute("class", "card-body");
+    /***** Sous titre + nom des oursons *****/
+    let titleIndexPicture = document.createElement ("h3");                              //=> Création d'une balise <h3>
+    titleIndexPicture.setAttribute ("class" , "card-title");                            //=> On lui attribut une classe
+    bodyContainer.appendChild (titleIndexPicture);                                      //=> On lui déclare son parent
+    titleIndexPicture.textContent = data.name;                                          //=> On lui attribut un contenu
 
-    pictureIndexTeddies.setAttribute("src",data.imageUrl);
-    pictureIndexTeddies.setAttribute("class","card-img-top");
-    pictureIndexTeddies.setAttribute("alt" , "image d'un ourson en peluche");
 
-    titleIndexPicture.setAttribute("class" , "card-title");
+    /***** Noms des oursons *****/
+    let nameIndexTeddies = document.createElement ("p");                                //=> Création d'une balise <p>
+    nameIndexTeddies.setAttribute ("class" , "card-text");                              //=> On lui attribut une classe
+    bodyContainer.appendChild (nameIndexTeddies);                                       //=> On lui déclare son parent
+    nameIndexTeddies.textContent = "Nom: " + data.name;                                 //=> On lui attribut un contenu
 
-    nameIndexTeddies.setAttribute("class" , "cards__item__body--name");
 
-    colorsIndexTeddies.setAttribute("class" , "cards__item__body--colors");
+    /***** Couleurs des oursons *****/
+    let colorsIndexTeddies = document.createElement ("p");                              //=> Création d'une balise <p>
+    colorsIndexTeddies.setAttribute ("class" , "card-text");                            //=> On lui attribut une classe
+    bodyContainer.appendChild (colorsIndexTeddies);                                     //=> On lui déclare son parent
+    colorsIndexTeddies.textContent = "Couleurs: " + data.colors;                        //=> On lui attribut un contenu
 
-    descriptionIndexTeddies.setAttribute("class" , "cards-text");
 
-    priceIndexTeddies.setAttribute("class" , "cards__items__body--price");
+    /***** Description des oursons *****/
+    let descriptionIndexTeddies = document.createElement ("p");                         //=> Création d'une balise <p>
+    descriptionIndexTeddies.setAttribute ("class" , "cards-text");                      //=> On lui attribut une classe
+    bodyContainer.appendChild (descriptionIndexTeddies);                                //=> On lui déclare son parent
+    descriptionIndexTeddies.textContent = "Description: " + data.description;           //=> On lui attribut un contenu
 
-    btnIndexContainer.setAttribute("class" , "cards__item--button");
 
-    btnIndexProduct.setAttribute("class" , "btn btn-primary");
-    btnIndexProduct.setAttribute("href" , "./product.html?id="+ data._id);
-   
+    /***** Prix des oursons *****/
+    let priceIndexTeddies = document.createElement ("p");                               //=> Création d'une balise <p>
+    priceIndexTeddies.setAttribute ("class" , "card-text");                             //=> On lui attribut une classe
+    bodyContainer.appendChild (priceIndexTeddies);                                      //=> On lui déclare son parent
+    priceIndexTeddies.textContent = "Prix: " + data.price/100 + " €";                   //=> On lui attribut un contenu
 
-//Agencement des éléments 
-    
-    bodyContainer.appendChild(pictureIndexTeddies);
 
-    bodyContainer.appendChild(titleIndexPicture);
+    /***** Container bouton page produit *****/
+    let btnIndexContainer = document.createElement ("div");                             //=>  Création d'un container <div>
+    btnIndexContainer.setAttribute ("class" , "cards__item--button");                   //=> On lui attribut une classe
+    btnIndexContainer.setAttribute ("id" , "btnProduct");                               //=> On lui attribut un <ID>
+    bodyContainer.appendChild (btnIndexContainer);                                      //=> On lui déclare son parent
 
-    bodyContainer.appendChild(nameIndexTeddies);
 
-    bodyContainer.appendChild(colorsIndexTeddies);
-
-    bodyContainer.appendChild(descriptionIndexTeddies);
-
-    bodyContainer.appendChild(priceIndexTeddies);
-
-    bodyContainer.appendChild(btnIndexContainer);
-
-    btnIndexContainer.appendChild(btnIndexProduct);
-
-    listTeddies.appendChild(masterContainer);
-
-    masterContainer.appendChild(bodyContainer);
-    
-//Contenu des balises 
-
-    titleIndexPicture.textContent = data.name;
-
-    nameIndexTeddies.textContent = "Nom: " + data.name;
-
-    colorsIndexTeddies.textContent = "Couleurs: " + data.colors;
-
-    descriptionIndexTeddies.textContent = "Description: " + data.description;
-
-    priceIndexTeddies.textContent = "Prix: " + data.price/100 + " €";
-
-    btnIndexProduct.textContent = "Voir l'ourson ";
-
+    /***** Bouton page produit *****/
+    let btnIndexProduct = document.createElement ("a");                                 //=> Création d'une balise <a>
+    btnIndexProduct.setAttribute ("class" , "btn btn-outline-info");                    //=> On lui attribut une classe
+    btnIndexProduct.setAttribute ("id" , "btnIndexProduct");                            //=> On lui attribut un <ID>
+    btnIndexProduct.setAttribute ("href" , "./product.html?id="+ data._id);             //=> Chemin du bouton 
+    btnIndexContainer.appendChild (btnIndexProduct);                                    //=> On lui déclare son parent
+    btnIndexProduct.textContent = "Voir l'ourson ";                                     //=> On lui attribut un contenu 
 };
 
