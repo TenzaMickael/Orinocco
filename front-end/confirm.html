@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
+
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
+
     <title> Orinocco - Le site n°1 des ventes en ligne </title>
 
 </head>
@@ -41,55 +43,57 @@
     </nav>
 
 	<main>
-        <h1 class="panier">Votre Panier</h1>
-   
-            <section id="basket">         
-             </section>
-        
-          </main>
-          <footer>
 
-            <ul class="foot">
-    
-                <li class="foot-icone"> 
-                    <img src="images/logo-sm.png">Orinoco - Site de vente en ligne
-                </li> 
-    
-                <li class="icone"> 
-    
-                    <a class="social" href="https://twitter.com/?lang=fr">              
-                        <i class="fab fa-twitter-square"></i>
-                    </a>
-    
-                </li>
-    
-                <li class="icone">
-    
-                    <a class="social" href="https://fr-fr.facebook.com/">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-    
-                </li>
-    
-                <li class="icone">
-    
-                    <a class="social" href="https://www.instagram.com/?hl=fr">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-    
-                </li>
-    
-            </ul>
-    
-        </footer>
+        <h2 class="confirmTitle"> Confirmation de votre commande  </h2>
+        <article>
+            <p> Votre numéro de commande est : <span id="orderId"></span> </p>
+            <p> Le montant de votre commande est de : <span id="orderPrice"></span> € </p>
+            <p> Merci pour votre commande et à bientot chez Orinocco </p>
+            <button class="btn btn-outline-primary" onclick="window.location.href = './index.html';">Retour à l'Accueil</button>
+        </article>
 
-    
+    </main>
+    <footer>
 
-<script src ="js/queries.js"></script>
+      <ul class="foot">
 
-<script src ="js/globalesFonctions.js"></script>
+          <li class="foot-icone"> 
+              <img src="images/logo-sm.png">Orinoco - Site de vente en ligne
+          </li> 
 
-<script src="js/baskets.js"></script>
+          <li class="icone"> 
+
+              <a class="social" href="https://twitter.com/?lang=fr">              
+                  <i class="fab fa-twitter-square"></i>
+              </a>
+
+          </li>
+
+          <li class="icone">
+
+              <a class="social" href="https://fr-fr.facebook.com/">
+                  <i class="fab fa-facebook-square"></i>
+              </a>
+
+          </li>
+
+          <li class="icone">
+
+              <a class="social" href="https://www.instagram.com/?hl=fr">
+                  <i class="fab fa-instagram"></i>
+              </a>
+
+          </li>
+
+      </ul>
+
+  </footer>
+
+
+
+
+
+<script src="js/confirm.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 

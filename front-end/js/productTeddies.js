@@ -74,7 +74,7 @@ function productTeddies (data) {
     let instruction = document.createElement ("h2");                                             //=> Création d'une balise <h2>
     instruction.setAttribute ("class", "instruction");                                           //=> On lui attribut une classe
     teddiesProductItem.appendChild (instruction);                                                //=> On lui déclare son parent
-    instruction.textContent = "Choisissez une couleurs pour ajouter votre article au panier ";   //=> On lui attribut un contenu
+    instruction.textContent = "Choisissez une couleur pour ajouter votre article au panier ";   //=> On lui attribut un contenu
 
 
     /***** Container option de l'ourson *****/

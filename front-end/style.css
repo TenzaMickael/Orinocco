@@ -1,245 +1,387 @@
-*
-{
+
+/*************** PAGE INDEX ***************/
+@font-face {
+    font-family: "cutecartoons";
+    src: url("./fonts/Cute\ Cartoon.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Letters";
+    src: url("./fonts/Letters\ for\ Learners.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "cursive";
+    src: url("./fonts/Cursive\ standard.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "milky";
+    src: url("./fonts/MilkyNice.ttf");
+    font-weight: bold;
+}
+
+* {
     list-style-type: none;
     margin:0;
     padding:0;
 }
 
-body
-{
-    background-color: rgba(233, 183, 183, 0.616);
+body {
+    background-image: url(./images/papier\ grain.jpg);
+    background-size:cover;
+    background-attachment:fixed;
 }
 
-nav 
-{
-    color : white;
-    font-size:1.5em;
+.navbar {
+    font-family: "milky";
+    display: flex;
+    font-size:1.9em;
+    background-image: url(./images/osier\ flou\ marron.jpg);
 }
 
-.jumbotron
-{
-    background-color: rgb(78, 30, 100);
-    color: rgb(221, 193, 37); 
+.jumbotron {
     text-align: center;
+    background-image: url(./images/coton.jpg);
+    background-size: cover;
 }  
 
-#listTeddies  
-{
-    width: auto;
+.container h1 {
+    color: rgb(15, 158, 110);
+    font-size: 8.5em;
+    font-family: "cutecartoons";
+    text-align: left;
+}
+
+.container p {  
+    font-family: "cursive";
+    font-style: italic;
+    color: rgb(4, 85, 4);
+    font-size: 2em;
+    text-align:left;
+}
+
+#listTeddies  {
     display: flex;
     flex-direction:row;   
     flex-wrap: wrap;  
     justify-content:center;      
-    align-items: center; 
 }
 
-
-.card
-{
+.card {
     margin:30px;
     width: 30rem;
+    border-radius: 10px;
+    background-color: rgb(15, 158, 110);  
 }
 
-.card-img-top
-{
+.card-img-top {
     border:1px solid black;
+    border-radius: 10px; 
 }
 
-.card-body
-{
- border:5px solid brown;
- background-color: #93f5e8a4;
+.card-body {
+    width: auto;
+    margin: auto;
+    border:9px solid rgb(15, 158, 110);
+    background-color: rgb(195, 228, 187);
+    border-radius: 10px; 
 }
 
-.card-title , h3
-{
+.card-title , h3 {
     text-align: center;
     font-size:2.5em;
     text-transform: capitalize;
     text-decoration: underline;
-    margin-top:10px;
-    color: brown;
+    margin:30px 0px 30px 0px;
+    color: rgb(101, 165, 42);
+    font-family: "letters"
 }
 
+#btnProduct {
+   width: auto;
+    font-weight: bolder; 
+   margin:auto;
+}
 
-.btn , #button 
-{
-    color:rgba(251, 255, 0, 0.938);
-    background-color: rgba(15, 107, 20, 0.767);
-    font-weight: bolder;
+#btnIndexProduct {
+   margin: auto;
+   font-size: 1.2em;
+}
+
+footer { 
+    background-image: url(./images/osier\ flou\ marron.jpg);
+    opacity:0.75;
+    position:static;
+}
+
+.foot {
+    text-align:center;  
+    font-size:1.9em;  
+    margin-bottom:0;
+    padding-top: 20px;
+    color:yellowgreen; 
+}
+
+.icone {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.5em;   
+}
+
+/*************** PAGE PRODUITS ***************/
+
+.cardOfProduct {
+    max-width: 900px;
+    margin: auto;
+    padding:20px;
+    font-size:1.2em;
+    background-color: #C3E4BB;
+    border:1px solid black;
+}
+
+.image__teddies__products {  
+    width:300px;
+    margin:auto;
+    margin-top:30px;
+    display:block;
+    border:1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.cards__items__body p {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+#contentProductTeddie {
+    max-width: 900px;
+    border: 1px solid black;
+    margin: 0px 250px 0px 250px;
+    padding:20px;
+}
+
+.instruction {
+    margin: 70px 0px 50px 0px;
+    text-align: center;
+    text-decoration:underline;
     text-transform: uppercase;
-    display: block; 
+    color: brown;
+    font-size:1.3em;
 }
 
-p
-{
-    font-size: 1.5em;
+#message {
+    font-size: 1.7em;
+    text-align: center;
+    color: rgb(101, 165, 42);
+    font-family: "letters"
 }
 
-/*------------------------------------------------------------*/
-
-#selects
-{
-    margin: 30px 0px 30px 0px;
+#selects {
+    margin: auto;
     font-size:1.5em;
     height: 50px; 
     font-size:1em;
-    color:rgba(251, 255, 0, 0.938);
-    background-color: brown;
-    display: block; 
+    color:rgba(250, 244, 244, 0.938);
+    background-color: rgb(42, 165, 89);
+    display: block;   
 }
 
-.checkArticle
-{
-    margin: 10px;
-}
-
-.instruction{
-    font-size: 1.8em;
-    text-transform:lowercase
-}
-
-.image__teddies__products
-{
-    
-    width:500px;
-    margin-bottom: 50px;
-}
-
-.option
-{
+#basketCommand {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 200px;
+    font-size: 1em;
+    border: 1px solid  rgb(101, 165, 42) ; 
     text-align: center;
+   
 }
 
-#trHeader{
-    display: flex;
-    flex-direction: row;
-}
-.cards__item__thumb img
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto ;
-    border:3px solid brown;
-    margin-top:50px; 
+/*************** PAGE PANIER ***************/
+
+#trBody , #tdQuantityTeddie , #tdSubTotalTeddie , #tdAddOrRemove , #tdDelete {
+    border:1px solid rgb(45, 87, 5);
 }
 
-.cards__items__body 
-{
-    margin:20px 20px 0 20px;
-    
-    padding:20px;
-    font-size:1em;
-    background-color: #93f5e8a4;
-    border:2px solid black;
-}
-
-.input-group
-{
-    text-align:center;
-    padding-left:20px;
-    font-size:1.5em;
-}
-
-.btn_2 
-{
-    display: block;
-    margin:auto;
-    color:yellowgreen;
-    background-color: rgb(10, 70, 13);
+.panier {
+    color: rgb(101, 165, 42);
+    font-family: "letters";
+    text-align: center;
+    font-size:3.5em;
+    margin-top:20px;
     margin-bottom:20px;
+    text-decoration: underline;
 }
 
-#message{
-    font-size: 1.6em;
+#table_1 , #table_2 {  
+    margin: auto;
+    margin-bottom: 50px;
+    max-width: 1000px;
+    max-height: 200px;
+    background-color:rgba(42, 165, 89, 0.44) ;
+    border: 2mm ridge rgb(101, 165, 42); ;  
+}
+
+.responsive-table-line p , #table_2 p {
     text-align: center;
-    color: blue;
-}
-/*-------------------------------------------------------------------*/
-
-.cards__items__body
-{
-    width: auto;
-    height: auto;
-    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin:5px;
+    margin-top: 20px;
 }
 
-.image__teddies__product{
-
+.image__teddies__product {
+    margin-top:30px;
     width:100px;
-    display: block;
-    border:3px solid brown;
-  
-
+    border: 3px solid rgb(101, 165, 42);;  
 }
 
-#basket
-{
-    display: block;
-    margin: 10px;
-    padding: 10px;
+#basket {
+    margin: auto;
     width: auto;
     font-size: 0.8em;
-    border: 2px solid brown ; 
     text-align: center;
 }
 
-.table
-{
-    background-color:burlywood;
+#btnAdd , #btnRemove {
+   width: 60px;
+   margin:auto ;
+   margin-top: 30px;
+   margin-right: 10px;
+   text-align: center;
 }
 
-.formulaire legend
-{
-    text-align:center;
-    border:1px solid brown;
+#btnContinueShopping,#btnOrder,#btnDeleteLocallStorage {
+    width: 200px;
+    margin:10px;
+}
+
+#formTitle{
+    font-size:2em;
+    font-family: letters ;
+    text-align: center;
+    margin:30px auto 30px auto;
+    font-weight: 100;
+}
+
+#form { 
+    margin: auto;
+    border: 2mm ridge rgb(101, 165, 42);
+    background-color:rgba(42, 165, 89, 0.44);
+    max-width: 400px;
+    text-align: center;
     margin-bottom:20px;
 }
 
-.formulaire
-{
-    text-align:center;
+#form label {
+    margin:10px auto 10px auto;
+  
+}
+
+#missLastName , #missFirstName , #missAdress , #missCity , #missMail{
+    color:red;
+    margin-left:20px;
+}
+
+#btnValid {
+    width: 200px;
+    margin:10px; 
+}
+
+
+/********** PAGE CONFIRMATION **********/
+
+.confirmTitle {
+    color: rgb(101, 165, 42);
+    font-family: "letters";
+    text-align: center;
+    font-size:3.5em;
     margin-top:50px;
-}
-
-.formulaire-prénom
-{
-    margin-top:35px;
-}
-
-.formulaire-ville
-{
     margin-bottom:20px;
+    text-decoration: underline; 
 }
 
-.form-example
-{
-    padding-bottom:20px;
+article {
+    background-color:rgba(42, 165, 89, 0.44) ;
+    max-width: 900px;
+    width: auto;
+    padding:20px;
+    border:2mm ridge rgb(101, 165, 42);
+    text-align: center;
+    font-size:1.5em;
+    margin: 100px auto 102px auto;  
+    height: auto;
 }
 
-footer
-{
-    display:flex;
-    display: inline;
-    text-align:center;  
-    font-size:1.5em;  
-    position:relative;
-    bottom:0;
-    width:100%;
-    height:50px;
+/****** MEDIAS QUERIES *******/
+
+@media screen and (max-width: 1100px) {
+    .image__teddies__products{ 
+        margin: auto;
+        width: 200px;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    .image__teddies__products{ 
+        margin: auto;
+        width: 200px;
+    }
 }
 
-.foot
-{
-    background-color:#4d555e;
-    margin-bottom:0;
-    padding-top: 20px;
-    color:yellowgreen;
-    height:auto;
+@media screen and (max-width: 1100px) {
+    #contentProductTeddie {
+        margin: auto;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    #contentProductTeddie {
+        margin: auto;
+    }
 }
 
-.icone
-{
-    display:inline;
-    font-size:1.5em;  
+@media screen and (max-width: 1100px) {
+    .instruction {
+        font-size: 1.2em;
+    }
 }
+  
+@media screen and (max-width: 576px) {
+    .instruction {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .image__teddies__product{
+        width: 50px;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    .image__teddies__product {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #btnAdd , #btnRemove{
+        margin-top:20px;
+    }
+}
+  
+@media screen and (max-width: 576px) {
+    #btnAdd , #btnRemove {
+        margin-top:20px;
+    }
+}
+
+
+
+
+

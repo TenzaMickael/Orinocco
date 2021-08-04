@@ -499,7 +499,8 @@ function placeOrder () {                                                        
         missMail.textContent = "Email manquant";                                                                    //=> Message d'erreur
         formValid = false;                                                                                          //=> change la variable "formValid"
 
-    }else if (!/^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i.test(mail.value)) {                                                                      //=> Sinon si les caractère rentrés sont différent de :
+    }else if (!/^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i.test(mail.value))  {  
+                                                                           //=> Sinon si les caractère rentrés sont différent de :
         
         missMail.textContent = "Format email incorect";                                                             //=> Message d'erreur
         missMail.style.color = "red";                                                                               //=>
