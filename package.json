@@ -1,1 +1,19 @@
-{}
+{
+  "name": "projet5-orinocco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TenzaMickael/projet5-orinocco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TenzaMickael/projet5-orinocco/issues"
+  },
+  "homepage": "https://github.com/TenzaMickael/projet5-orinocco#readme"
+}

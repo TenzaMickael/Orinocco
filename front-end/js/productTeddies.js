@@ -15,13 +15,13 @@ getOneTeddie (id);                                                              
 
 function productTeddies (data) {                                                                 
    
-    /***** Container de la page *****/
+/***** CONTAINER DE LA PAGE *****/
     let teddiesProductItem = document.createElement ("div");                                     //=> Création d'un container <div> 
     teddiesProductItem.setAttribute ("class" , "cardOfProduct");                                 //=> On lui attribut une classe
     descriptionTeddies.appendChild (teddiesProductItem);                                         //=> On lui déclare son parent
 
 
-    /***** Image de l'ourson *****/
+/***** IMAGE DE L'OURSON *****/
     let teddiesProductPicture = document.createElement ("img");                                  //=> Création d'une balise <img>   
     teddiesProductPicture.setAttribute ("class" , "image__teddies__products");                   //=> On lui attribut une classe
     teddiesProductPicture.setAttribute ("src" , data.imageUrl);                                  //=> On lui indique où récupérer l'image
@@ -29,74 +29,74 @@ function productTeddies (data) {
     teddiesProductItem.appendChild (teddiesProductPicture);                                      //=> On lui déclare son parent
 
 
-    /***** Sous titre + nom de l'oursons *****/
+/***** SOUS TITRE + NOM DE L'OURSON *****/
     let teddiesProductTitle = document.createElement ("h3");                                     //=> Création d'une balise <h3>
     teddiesProductTitle.setAttribute ("class" , "cards__items__body--title");                    //=> On lui attribut une classe
     teddiesProductItem.appendChild (teddiesProductTitle);                                        //=> On lui déclare son parent
     teddiesProductTitle.textContent = data.name;                                                 //=> On lui attribut un contenu
 
 
-    /***** Container des infos de l'ourson  *****/
+/***** CONTAINER DES INFOS DE L'OURSON  *****/
     let contentProductTeddie = document.createElement ("div");                                   //=> Création d'un container <div>
     contentProductTeddie.setAttribute ("id", "contentProductTeddie");                            //=> On lui attribut un <ID>
     teddiesProductItem.appendChild (contentProductTeddie);                                       //=> On lui déclare son parent
 
 
-    /***** Nom de l'ourson *****/
+/***** NOM DE L'OURSON *****/
     let teddiesProductName = document.createElement ("p");                                       //=> Création d'une balise <p>
     teddiesProductName.setAttribute ("class", "cards__items__body--name");                       //=> On lui attribut une classe
     contentProductTeddie.appendChild (teddiesProductName);                                       //=> On lui déclare son parent
     teddiesProductName.textContent = "Nom: " + data.name;                                        //=> On lui attribut un contenu
 
 
-    /***** Couleurs de l'ourson *****/
+/***** COULEURS DE L'OURSONS *****/
     let teddiesProductColors = document.createElement ("p");                                     //=> Création d'une balise <p>
     teddiesProductColors.setAttribute ("class" , "cards__items__body—colors");                   //=> On lui attribut une classe
     contentProductTeddie.appendChild (teddiesProductColors);                                     //=> On lui déclare son parent
     teddiesProductColors.textContent = "Couleurs: " + data.colors;                               //=> On lui attribut un contenu
 
 
-    /***** Description de l'ourson *****/
+/***** DESCRIPTION DE L'OURSON *****/
     let teddiesProductDescription = document.createElement ("p");                                //=> Création d'une balise <p>
     teddiesProductDescription.setAttribute ("class" , "cards__items__body—description");         //=> On lui attribut une classe
     contentProductTeddie.appendChild (teddiesProductDescription);                                //=> On lui déclare son parent
     teddiesProductDescription.textContent = "Description: " + data.description;                  //=> On lui attribut un contenu
 
 
-    /***** Prix de l'ourson *****/
+/***** PRIX DE L'OURSON *****/
     let teddiesProductPrice = document.createElement ("p");                                      //=> Création d'une balise <p>
     teddiesProductPrice.setAttribute ("class", "cards__items__body—price");                      //=> On lui attribut une classe
     contentProductTeddie.appendChild (teddiesProductPrice);                                      //=> On lui déclare son parent
     teddiesProductPrice.textContent = "Prix: " + data.price/100 + " €";                          //=> On lui attribut un contenu
 
 
-    /***** Sous titre instruction *****/
+/***** SOUS TITRE DE L'INSTRUCTION *****/
     let instruction = document.createElement ("h2");                                             //=> Création d'une balise <h2>
     instruction.setAttribute ("class", "instruction");                                           //=> On lui attribut une classe
     teddiesProductItem.appendChild (instruction);                                                //=> On lui déclare son parent
     instruction.textContent = "Choisissez une couleur pour ajouter votre article au panier ";   //=> On lui attribut un contenu
 
 
-    /***** Container option de l'ourson *****/
+/***** CONTAINER OPTION DE L'OURSON *****/
     let teddiesCheckArticles = document.createElement ("div");                                   //=> Création d'un container <div>
     teddiesCheckArticles.setAttribute ("class", "checkArticle");                                 //=> On lui attribut une classe
     teddiesProductItem.appendChild (teddiesCheckArticles);                                       //=> On lui déclare son parent
 
 
-    /***** Choix de la couleur *****/
+/***** CHOIX DE LA COULEURS *****/
     let teddiesDetailSelect = document.createElement ("select");                                 //=> Création d'une balise <select>
     teddiesDetailSelect.setAttribute ("id","selects");                                           //=> On lui attribut un "ID"
     teddiesCheckArticles.appendChild (teddiesDetailSelect);                                      //=> On lui déclare son parent
 
 
-    /***** Bouton avec les couleurs *****/
+/***** BOUTON AVEC LES COULEURS *****/
     let teddiesSelectOptions = document.createElement ("option");                                //=> Création d'une balise <option>
     teddiesSelectOptions.setAttribute ("id" , "defaultOption");                                  //=> On attribut un "ID"
     teddiesSelectOptions.textContent = "--Choisissez votre couleur--";                           //=> On lui attribut un contenu 
     teddiesDetailSelect.appendChild (teddiesSelectOptions);                                      //=> On lui déclare son parent 
   
     
-    /***** Bouton ajouter au panier *****/
+/***** BOUTON AJOUTER AU PANIER *****/
     let detailBtn = document.createElement ("button");                                           //=> Création d'une balise <button>
     detailBtn.setAttribute ("class","btn btn-primary");                                          //=> On lui attribut une classe                       
     detailBtn.setAttribute ("id","basketCommand");                                               //=> On attribut un "ID" 
@@ -107,7 +107,7 @@ function productTeddies (data) {
     detailBtn.textContent="Ajouter à mon panier";                                                //=> On lui attribut un contenu
 
 
-/* Création d'une boucle pour récupérer les couleurs des oursons */
+/* Création d'une boucle pour récupérer les couleurs des oursons de l'APi */
                                                                   
     for (let i = 0;i < data.colors.length; i++) {                                                //=> Boucle sur le tableau de data.colors + incrémentation
 
@@ -121,7 +121,7 @@ function productTeddies (data) {
     };
 
 
-/* Evènement sur le bouton des couleurs  */
+/* Ecoute sur le bouton des couleurs  */
 
     teddiesDetailSelect.addEventListener ('change' , function (event) {                          //=> Action si un changement se produit sur le bouton des couleurs
                                                      
@@ -137,7 +137,7 @@ function productTeddies (data) {
     });
 
 
-/* Evènement sur le bouton "Ajouter au panier" */
+/* Ecoute sur le bouton "Ajouter au panier" */
 
         detailBtn.addEventListener ('click', function (event){                                   //=> Action si un click se produit sur le bouton "ajouter au panier"
 
@@ -158,7 +158,7 @@ function productTeddies (data) {
 };
 
 
-/* On créer une fonction qui va contenir les oursons dans le panier */
+/* On créer une fonction qui va envoyer les oursons dans le panier */
 
 function productBasket (idteddie) {                                                              //=> On créer une fonction pour créer le panier avec les oursons à l'intérieur  
 

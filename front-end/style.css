@@ -59,7 +59,7 @@ body {
 .container p {  
     font-family: "cursive";
     font-style: italic;
-    color: rgb(4, 85, 4);
+    color: rgb(217, 255, 0);
     font-size: 2em;
     text-align:left;
 }
@@ -202,6 +202,7 @@ footer {
    
 }
 
+
 /*************** PAGE PANIER ***************/
 
 #trBody , #tdQuantityTeddie , #tdSubTotalTeddie , #tdAddOrRemove , #tdDelete {
@@ -209,7 +210,7 @@ footer {
 }
 
 .panier {
-    color: rgb(101, 165, 42);
+    color: rgb(177, 0, 0);
     font-family: "letters";
     text-align: center;
     font-size:3.5em;

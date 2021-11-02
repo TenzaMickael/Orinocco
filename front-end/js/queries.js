@@ -69,7 +69,7 @@ function postOfTeddie (order) {
                 deleteTeddie(itemsTeddies);                                             //=> Appelle de la fonction deleteTeddie
                 
                 sessionStorage.setItem("resumeCommand",JSON.stringify (confirmOrder));  //=> On crée le sessionStorage avec à l'intérieur les information pour le client 
-             
+                localStorage.clear();
                 window.location = "./confirm.html";                                     //=> On redirige l'utilisateur vers la page de confirmation
         }   
     };

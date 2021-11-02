@@ -9,3 +9,4 @@ let orderConfirm = JSON.parse(sessionStorage.getItem("resumeCommand"));         
 document.getElementById("orderId").innerHTML = orderConfirm.orderId;                    //=> On lui attribut un contenu
 document.getElementById("orderPrice").innerHTML = orderConfirm.totalPriceCommand;       //=> On lui attribut un contenu
 
+

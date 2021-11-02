@@ -4,6 +4,7 @@ var totalPrice = 0;                                                             
 var totalArticles = 0;                                                                                              //=> Variable qui va contenir le nombre total d'articles 
 //let urlApi = "http://localhost:3000/api/teddies/";
 
+
 /***** Récupération de l' ID "basket" *****/
 
 const basket = document.getElementById ("basket");                                                                  //=> Récupération de l'ID "basket"
@@ -32,7 +33,7 @@ for (let i = 0;i < itemsTeddies.length; i++) {                                  
 
 
 
-/* Requete XMLHttpReques */
+/* Requete XMLHttpRequest */
 
     var request = new XMLHttpRequest();                                                                             //=> Lance une requete XMLHttRequest                                
 
@@ -282,7 +283,7 @@ function resumeTab (itemsTeddies) {                                             
         tableContent.appendChild (placeOrderBasket);                                                                //=> On lui déclare son parent
 
             
-        /***** Bouton commander *****/
+        /***** Bouton vider le panier *****/
         let deleteLocalStorage = document.createElement ("btn");                                                    //=> Création d'une balise <btn>
         deleteLocalStorage.setAttribute ("type" , "button");                                                        //=> On définit son type
         deleteLocalStorage.setAttribute ("class" , "btn btn-danger");                                               //=> On lui attribut une classe
@@ -294,7 +295,7 @@ function resumeTab (itemsTeddies) {                                             
         /***** Evènement sur le bouton "Vider le panier" *****/
         btnDeleteLocallStorage.addEventListener("click", function (event) {                                         //=> Action si un click se produit sur le bouton "Vider le panier"
             event.preventDefault();                                                                                 //=> On désactive le comportement par défaut
-            deleteTeddie (itemsTeddies);                                                                            //=> On appelle la fonction deleteTeddie
+            localStorage.clear();                                                                                   //=> On vide le sessionstorage
             window.location.reload ();                                                                              //=> On recharge la page
         });  
 
